@@ -1,1 +1,237 @@
-index.html
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#080808">
+
+<meta name="description" content="Diamond Boy — a community meme coin inspired by trading, diamond hands, and trader mindset on Solana.">
+
+<title>Diamond Boy | Solana Meme Coin</title>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{background:#080808;color:#f5f5f5;font-family:Arial,sans-serif}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 7%;border-bottom:1px solid #242424}
+
+.logo{font-weight:900;font-size:20px;letter-spacing:2px}
+
+.logo span{color:#b8f34a}
+
+nav a{color:#aaa;text-decoration:none;margin-left:20px;font-size:13px}
+
+.hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:65px 20px;background:radial-gradient(ellipse at center,#242a18 0%,#10110d 35%,#080808 72%)}
+
+.diamond{font-size:76px;margin-bottom:22px;filter:drop-shadow(0 0 25px #b8f34a55)}
+
+.tag{color:#b8f34a;border:1px solid #444c2b;border-radius:30px;padding:9px 15px;font-size:11px;letter-spacing:2px}
+
+h1{font-size:clamp(43px,9vw,86px);line-height:1.02;letter-spacing:-3px;margin:28px 0 18px;font-weight:900}
+
+h1 span{color:#b8f34a}
+
+.hero p{max-width:510px;color:#aaa;line-height:1.8;font-size:15px}
+
+.buttons{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+
+.btn{padding:15px 22px;border-radius:5px;text-decoration:none;font-size:13px;font-weight:bold}
+
+.primary{background:#b8f34a;color:#080808}
+
+.secondary{border:1px solid #555;color:white}
+
+section{padding:75px 7%;max-width:1000px;margin:auto}
+
+.kicker{color:#b8f34a;font-size:11px;letter-spacing:3px;margin-bottom:15px}
+
+h2{font-size:34px;margin-bottom:20px}
+
+.desc{color:#999;line-height:1.8;max-width:650px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px;margin-top:28px}
+
+.card{padding:25px;border:1px solid #292929;border-radius:9px;background:#101010}
+
+.card h3{font-size:13px;color:#aaa;margin-bottom:13px}
+
+.number{font-size:27px;font-weight:bold;color:#b8f34a}
+
+.card p{color:#888;font-size:12px;line-height:1.7;margin-top:10px}
+
+.token{margin-top:25px;padding:22px;border:1px solid #303030;border-radius:8px;background:#101010}
+
+.address{color:#aaa;font-size:12px;word-break:break-all;margin:12px 0}
+
+.copy{background:#b8f34a;color:#080808;border:0;border-radius:4px;padding:11px 16px;font-weight:bold}
+
+footer{text-align:center;border-top:1px solid #242424;padding:30px 15px;color:#777;font-size:12px;line-height:2}
+
+footer strong{color:#b8f34a}
+
+@media(max-width:500px){nav a{margin-left:10px;font-size:11px}.logo{font-size:16px}h1{letter-spacing:-2px}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">💎 DIAMOND<span>BOY</span></div>
+
+  <nav><a href="#about">About</a><a href="#token">Token</a></nav>
+
+</header>
+
+<main>
+
+<div class="hero">
+
+  <div class="diamond">💎</div>
+
+  <div class="tag">SOLANA COMMUNITY MEME COIN</div>
+
+  <h1>DIAMOND<br><span>HANDS.</span><br>DIAMOND MIND.</h1>
+
+  <p>Built for traders. Inspired by the grind.
+
+  A community driven by conviction, discipline,
+
+  and a diamond mindset.</p>
+
+  <div class="buttons">
+
+    <a class="btn primary" href="#token">EXPLORE THE TOKEN ↓</a>
+
+    <a class="btn secondary" href="#about">OUR STORY</a>
+
+  </div>
+
+</div>
+
+<section id="about">
+
+  <div class="kicker">THE MINDSET</div>
+
+  <h2>Not just a coin.<br>A state of mind.</h2>
+
+  <p class="desc">Markets test your patience. Trading tests your discipline.
+
+  Diamond Boy celebrates the community, the lessons, and the mindset
+
+  behind every trader's journey. No promises. Just community.</p>
+
+</section>
+
+<section id="token">
+
+  <div class="kicker">TOKEN OVERVIEW</div>
+
+  <h2>The Diamond Standard.</h2>
+
+  <p class="desc">A community-first meme coin concept built on Solana.
+
+  Token details will be published transparently as they are finalized.</p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>TOTAL SUPPLY</h3>
+
+      <div class="number">1 BILLION</div>
+
+      <p>Proposed supply: 1,000,000,000 tokens.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>BLOCKCHAIN</h3>
+
+      <div class="number">Solana</div>
+
+      <p>Planned ecosystem. Launch status to be announced.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>MISSION</h3>
+
+      <div class="number">Community</div>
+
+      <p>Trading culture, creativity, and diamond mindset.</p>
+
+    </div>
+
+  </div>
+
+  <div class="token">
+
+    <h3>OFFICIAL TOKEN ADDRESS</h3>
+
+    <p class="address" id="address">Not launched — official address pending.</p>
+
+    <p style="color:#888;font-size:12px;line-height:1.7">
+
+    Always verify the official contract address before interacting
+
+    with any token.
+
+    </p>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="kicker">THE DIAMOND RULES</div>
+
+  <h2>Think long term.</h2>
+
+  <div class="cards">
+
+    <div class="card"><h3>01 / DISCIPLINE</h3><p>Respect the process. Learn from every outcome.</p></div>
+
+    <div class="card"><h3>02 / TRANSPARENCY</h3><p>Clear information. Honest communication.</p></div>
+
+    <div class="card"><h3>03 / COMMUNITY</h3><p>Build together. Grow through shared creativity.</p></div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <strong>💎 DIAMOND BOY</strong><br>
+
+  A community meme coin concept on Solana.<br>
+
+  Meme coin projects are volatile and may lose their entire value.
+
+  Nothing here is financial advice.<br>
+
+  © 2026 Diamond Boy. Built with a diamond mindset.
+
+</footer>
+
+</body>
+
+</html>
