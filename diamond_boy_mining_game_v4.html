@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b0a">
+<title>Diamond Boy — Mine for Diamonds</title>
+<style>
+:root{--bg:#080b0a;--panel:#101613;--line:#26352c;--green:#9dff65;--green2:#43d477;--text:#f3f7f2;--muted:#9aa99d;--orange:#ffb45c;--blue:#79d9ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#14241a 0,#080b0a 55%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.wrap{max-width:1100px;margin:auto;padding:20px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:8px 0 18px}.brand{font-weight:950;letter-spacing:1px;font-size:clamp(19px,4vw,28px)}.brand span{color:var(--green)}.tag{color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.hero{text-align:center;padding:24px 0 20px}.eyebrow{color:var(--green);font-weight:800;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(30px,7vw,52px);margin:8px 0;line-height:1.02;letter-spacing:-1.5px}.hero p{color:var(--muted);margin:0 auto;max-width:560px;line-height:1.5}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.stat,.panel{background:linear-gradient(145deg,#111a14,#0c100e);border:1px solid var(--line);border-radius:16px}.stat{padding:13px;text-align:center}.stat small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px}.stat strong{display:block;font-size:clamp(20px,5vw,28px);margin-top:5px}.green{color:var(--green)}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:14px}.panel{padding:16px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.panel h2{font-size:16px;margin:0}.sub{font-size:12px;color:var(--muted)}
+.minebox{background:#080d0a;border:1px solid #26392d;border-radius:13px;overflow:hidden;position:relative}.minebar{display:flex;justify-content:space-between;align-items:center;padding:12px 13px;background:#0f1711;border-bottom:1px solid #26392d;font-size:12px;color:var(--muted)}#minefield{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;padding:12px;min-height:250px}
+.tile{aspect-ratio:1;border:1px solid #324338;border-radius:10px;background:linear-gradient(145deg,#25352a,#17221a);color:#d7e7da;font-size:clamp(22px,5vw,31px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .12s,border-color .12s,background .12s;user-select:none;box-shadow:inset 0 1px 0 #ffffff0b}.tile:active{transform:scale(.95)}.tile:hover{border-color:#6a9b70}.tile.revealed{cursor:default;background:#111914;box-shadow:none}.tile.diamond{border-color:#3eaf9a;background:#0e2925}.tile.tnt{border-color:#98663a;background:#2b1d12}.tile.empty{color:#435448}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.btn{appearance:none;border:0;border-radius:11px;padding:12px 15px;font-weight:850;cursor:pointer;font-size:14px}.btn.primary{background:var(--green);color:#0b140b;flex:1}.btn.secondary{background:#17211a;color:var(--text);border:1px solid #34483a}.btn:disabled{opacity:.45;cursor:not-allowed}.energyrow{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:12px;margin:12px 0 7px}.energytrack{height:8px;border-radius:20px;background:#253128;overflow:hidden}.energyfill{height:100%;width:100%;background:linear-gradient(90deg,var(--green2),var(--green));transition:width .2s}
+.inputrow{display:flex;gap:8px;margin-top:12px}.inputrow input{min-width:0;flex:1;background:#080d0a;border:1px solid #314237;border-radius:10px;padding:11px 12px;color:var(--text);font:inherit}.leaderlist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}.leaderlist li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:9px;align-items:center;padding:10px;border-radius:11px;background:#0a100c;border:1px solid #1f2c23}.rank{font-weight:900;color:var(--green)}.player{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:750}.score{font-weight:900;font-variant-numeric:tabular-nums}.notice{font-size:12px;color:var(--muted);line-height:1.55;margin-top:12px}.notice strong{color:#dce9de}.status{margin-top:10px;min-height:20px;color:var(--green);font-size:13px;font-weight:700}.cooldown{color:var(--orange)}.footer{text-align:center;color:#718076;font-size:11px;margin-top:20px}.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.howto div{background:#0a100c;border:1px solid #1f2c23;border-radius:10px;padding:10px;font-size:12px;color:var(--muted)}.howto b{display:block;color:var(--text);margin-bottom:4px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:11px 6px}#minefield{gap:6px;padding:9px;min-height:220px}.panel{padding:12px}.howto{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.tag{letter-spacing:1px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">💎 DIAMOND <span>BOY</span></div><div class="tag">Community mining arcade · Season 01</div></header>
+<section class="hero"><div class="eyebrow">DIG SMART. STACK DIAMONDS.</div><h1>THE DIAMOND MINE</h1><p>Mine the hidden gems, avoid TNT, and climb your local leaderboard. Every diamond is worth <b class="green">+20 points</b>.</p></section>
+<div class="stats">
+ <div class="stat"><small>Your points</small><strong class="green" id="points">0</strong></div>
+ <div class="stat"><small>Diamonds found</small><strong id="diamonds">0 💎</strong></div>
+ <div class="stat"><small>Mine depth</small><strong id="depth">01</strong></div>
+</div>
+<div class="layout">
+ <section class="panel">
+  <div class="panelhead"><h2>⛏️ Mining field</h2><span class="sub" id="roundLabel">ROUND 01</span></div>
+  <div class="minebox"><div class="minebar"><span>SECTOR <b id="sector">001</b></span><span id="fieldHint">Tap a block to mine</span></div><div id="minefield" aria-label="Mining field"></div></div>
+  <div class="energyrow"><span>⚡ ENERGY</span><b id="energyText">10 / 10</b></div><div class="energytrack"><div class="energyfill" id="energyFill"></div></div>
+  <div class="actions"><button class="btn primary" id="mineBtn">⛏️ Start mining</button><button class="btn secondary" id="resetBtn">New mine</button></div>
+  <div class="status" id="status" role="status">Ready when you are, miner.</div>
+  <div class="howto"><div><b>💎 Diamond</b>+20 points and 1 diamond</div><div><b>🧨 TNT</b>-10 points maximum; score never goes below zero</div><div><b>🔋 Energy</b>When empty, automatic 30-second recharge</div></div>
+ </section>
+ <aside class="panel">
+  <div class="panelhead"><h2>🏆 Leaderboard</h2><span class="sub">TOP 10</span></div>
+  <div class="inputrow"><input id="playerName" maxlength="18" placeholder="@yourname" aria-label="Your leaderboard name"><button class="btn secondary" id="saveName">Save</button></div>
+  <p class="notice">Choose a display name to appear on this device's leaderboard.</p>
+  <ol class="leaderlist" id="leaderboard"></ol>
+  <p class="notice"><strong>Leaderboard note:</strong> This version saves scores in this browser on this device. A shared global leaderboard for everyone on the website needs a database/backend and anti-cheat validation.</p>
+ </aside>
+</div>
+<div class="footer">DIAMOND BOY • COMMUNITY GAME • PLAY FAIR, MINE ON</div>
+</div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const field=$('minefield'), pointsEl=$('points'), diamondsEl=$('diamonds'), depthEl=$('depth'), energyText=$('energyText'), energyFill=$('energyFill'), status=$('status'), mineBtn=$('mineBtn'), resetBtn=$('resetBtn'), nameInput=$('playerName');
+let points=0,diamonds=0,energy=10,sector=1,active=false,coolUntil=0,timer=null,tiles=[],revealed=0;
+let player=localStorage.getItem('db_miner_name')||'@miner';
+nameInput.value=player;
+const scoreKey='diamond_boy_mining_scores_v1';
+function loadScores(){try{return JSON.parse(localStorage.getItem(scoreKey)||'[]')}catch(e){return []}}
+function saveScores(){const scores=loadScores();const i=scores.findIndex(x=>x.name.toLowerCase()===player.toLowerCase());if(i>=0){scores[i].score=Math.max(scores[i].score,points);scores[i].diamonds=Math.max(scores[i].diamonds,diamonds)}else scores.push({name:player,score:points,diamonds});scores.sort((a,b)=>b.score-a.score);localStorage.setItem(scoreKey,JSON.stringify(scores.slice(0,10)));renderLeaderboard()}
+function renderLeaderboard(){const scores=loadScores();$('leaderboard').innerHTML='';if(!scores.length){scores.push({name:'@diamondminer',score:0,diamonds:0})}scores.slice(0,10).forEach((s,i)=>{const li=document.createElement('li');const r=document.createElement('span');r.className='rank';r.textContent='#'+(i+1);const n=document.createElement('span');n.className='player';n.textContent=s.name;const sc=document.createElement('span');sc.className='score';sc.textContent=s.score.toLocaleString()+' pts';li.append(r,n,sc);$('leaderboard').appendChild(li)})}
+function say(msg,kind=''){status.textContent=msg;status.className='status '+kind}
+function update(){pointsEl.textContent=points.toLocaleString();diamondsEl.textContent=diamonds+' 💎';depthEl.textContent=String(sector).padStart(2,'0');energyText.textContent=energy+' / 10';energyFill.style.width=(energy*10)+'%';$('sector').textContent=String(sector).padStart(3,'0');$('roundLabel').textContent='ROUND '+String(sector).padStart(2,'0');}
+function newMine(auto=false){if(coolUntil>Date.now()){say('Recharge in '+Math.ceil((coolUntil-Date.now())/1000)+'s','cooldown');return}active=true;energy=10;revealed=0;tiles=[];field.innerHTML='';// 25 blocks; increase gems per sector, cap 12; at least 8 diamonds per mine
+const count=25, gemCount=Math.min(12,8+Math.floor((sector-1)/2)), tntCount=3;let types=Array(gemCount).fill('diamond').concat(Array(tntCount).fill('tnt'));while(types.length<count)types.push('empty');for(let i=types.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[types[i],types[j]]=[types[j],types[i]]}
+for(let i=0;i<count;i++){const b=document.createElement('button');b.className='tile';b.type='button';b.textContent='⬛';b.setAttribute('aria-label','Hidden mining block');b.addEventListener('click',()=>dig(i,b));field.appendChild(b);tiles.push({type:types[i],el:b,done:false})}
+mineBtn.disabled=false;mineBtn.textContent='⛏️ Start mining';$('fieldHint').textContent='Find diamonds · watch for TNT';update();if(!auto)say('New mine ready. Find those diamonds!');else say('Energy recharged automatically. New mine ready!')}
+function dig(i,b){if(!active||tiles[i].done||energy<=0||coolUntil>Date.now())return;const t=tiles[i];t.done=true;revealed++;energy--;b.classList.add('revealed');if(t.type==='diamond'){b.textContent='💎';b.classList.add('diamond');points+=20;diamonds++;say('Diamond found! +20 points 💎')}else if(t.type==='tnt'){b.textContent='🧨';b.classList.add('tnt');points=Math.max(0,points-10);say('TNT! -10 points (score cannot go below 0).','cooldown');const nearby=[i-1,i+1,i-5,i+5].filter(k=>k>=0&&k<tiles.length);nearby.forEach(k=>{if(!tiles[k].done){tiles[k].done=true;revealed++;tiles[k].el.classList.add('revealed','empty');tiles[k].el.textContent='▪️'}})}else{b.textContent='▪️';b.classList.add('empty');say('Rock cleared. Keep digging!')}
+update();saveScores();if(energy<=0||revealed>=tiles.length){active=false;mineBtn.disabled=true;coolUntil=Date.now()+30000;say('Energy depleted! Auto-recharge in 30 seconds…','cooldown');startCooldown()}else if(tiles.every(x=>x.done)){active=false;mineBtn.disabled=true;say('Sector cleared! New mine available.');}}
+function startCooldown(){if(timer)clearInterval(timer);timer=setInterval(()=>{const left=Math.max(0,Math.ceil((coolUntil-Date.now())/1000));if(left>0){mineBtn.disabled=true;mineBtn.textContent='🔋 Recharge '+left+'s';say('Energy depleted! Auto-recharge in '+left+' seconds…','cooldown')}else{clearInterval(timer);timer=null;sector++;newMine(true)}},250)}
+$('saveName').addEventListener('click',()=>{let n=nameInput.value.trim();if(!n)n='@miner';if(!n.startsWith('@'))n='@'+n;n=n.slice(0,18);player=n;nameInput.value=n;localStorage.setItem('db_miner_name',player);saveScores();say('Display name saved: '+player)});
+mineBtn.addEventListener('click',()=>{if(coolUntil>Date.now()){say('Recharge in '+Math.ceil((coolUntil-Date.now())/1000)+'s','cooldown');return}if(!active)newMine();else say('Tap any hidden block to mine!')});
+resetBtn.addEventListener('click',()=>{if(coolUntil>Date.now()){say('Recharge in '+Math.ceil((coolUntil-Date.now())/1000)+'s — no skipping the cooldown.','cooldown');return}sector++;newMine()});
+renderLeaderboard();update();newMine();
+})();
+</script>
+</body>
+</html>
